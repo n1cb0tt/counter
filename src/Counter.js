@@ -4,13 +4,13 @@ import React, {useState, useEffect} from 'react';
 
 function Counter() {
     const [count, setCount] = useState();
-    const handleChangeCount= (event) => {setCount(event.target.value)};
+    const handleChangeCount= (event) => {setCount(parseInt(event.target.value))};
 
     useEffect(
         ()=>{
             document.title ='Votre compteur affiche la valeur de : ${count}'
         }
-    );
+    ,[count]);
 
   
     return (
